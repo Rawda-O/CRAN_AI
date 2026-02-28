@@ -1,0 +1,5 @@
+# Safety layer: enforce primary QoS at inference time (post-processing)
+safety:
+  enable: true
+  mode: "scale_joint"          # scale_joint guarantees Q <= A by scaling Ps and Pr jointly
+  apply_to: "both"             # DF | CF | both

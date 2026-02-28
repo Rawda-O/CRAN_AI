@@ -1,0 +1,7 @@
+# Risk-controlled QoS under imperfect CSI
+risk:
+  enable: true
+  type: "cvar"                 # cvar | chance_margin
+  epsilon: 0.01                # chance constraint target (used in chance_margin)
+  cvar_alpha: 0.95             # tail fraction for CVaR (used in cvar)
+  weight: 2.0                  # how strongly to penalize risk term

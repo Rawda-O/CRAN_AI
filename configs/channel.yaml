@@ -1,0 +1,27 @@
+# Channel model configuration
+channel:
+  model: "gaussian"            # gaussian | anne | uniform | rician | nakagami | mixed
+  mixed:
+    # Used only when model == mixed (domain randomization across channel types)
+    weights:
+      gaussian: 0.5
+      rician: 0.2
+      nakagami: 0.2
+      anne: 0.1
+      uniform: 0.0
+
+  geometry:
+    cell_size: 10.0            # square cell side length (meters)
+    relay_xy: [5.0, 5.0]       # relay fixed location (center by default)
+    pathloss_exp: 3.0          # gamma in papers
+    sigma_g: 7.0               # fading std in papers
+    min_distance: 1e-2         # avoid division by zero in pathloss
+
+  fading:
+    # Rician parameters (scipy-style: b = nu/sigma)
+    rician_b: 0.775
+    # Nakagami parameters
+    nakagami_nu: 4.97
+    # Uniform coefficient magnitude range (for i.i.d. link-only model)
+    uniform_low: 1.0e-3
+    uniform_high: 1.0e3

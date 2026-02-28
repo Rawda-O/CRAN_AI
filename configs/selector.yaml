@@ -1,0 +1,10 @@
+# DF/CF hybrid scheme selection settings
+selector:
+  enable: true
+  method: "extra_dnn"          # rule_based | extra_dnn
+  threshold:
+    # used for threshold tuning on selector probability
+    grid: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+
+  features:
+    include_policy_outputs: true  # pass DF/CF predicted outputs into selector input

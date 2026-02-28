@@ -1,0 +1,5 @@
+# Hardware/impairments configuration (for realism)
+hardware:
+  enable: true
+  residual_si_db: 80.0         # residual self-interference suppression (dB); inf disables SI term
+  evm: 0.0                     # optional error vector magnitude (0 means ideal)

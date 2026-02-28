@@ -1,0 +1,28 @@
+# Base configuration (shared across all experiments)
+project:
+  name: "CRAN-AI"
+  output_root: "runs"          # where all run artifacts will be saved
+  deterministic: true          # enforce deterministic settings where possible (slower but reproducible)
+
+device:
+  prefer: "cuda"               # cuda if available, else cpu
+  cudnn_benchmark: false       # keep false for reproducibility; true may be faster but non-deterministic
+  mixed_precision: true        # enable AMP for faster GPU training (safe default)
+
+seed:
+  value: 12345                 # global seed for python/numpy/torch
+  dataloader_workers: 4        # DataLoader workers (tune per machine)
+  pin_memory: true             # speed up host->device transfer when using CUDA
+
+data:
+  batch_size: 2048
+  train_samples: 1000000
+  val_samples: 200000
+  test_samples: 200000
+
+links: ["PP","PR","RP","SS","SR","RS","SP","PS"]  # fixed link set used throughout the framework
+
+logging:
+  level: "INFO"
+  log_to_file: true
+  log_every_steps: 50

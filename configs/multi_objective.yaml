@@ -1,0 +1,12 @@
+# Multi-objective loss weights
+multi_objective:
+  enable: true
+  weights:
+    wr: 1.5                    # maximize secondary rate (main objective)
+    wq: 10.0                   # penalize primary QoS violation strongly
+    we: 0.1                    # energy term weight (tradeoff)
+    wo: 0.2                    # outage proxy weight
+
+  outage:
+    Rs_threshold: 0.2          # outage threshold for secondary
+    k: 10.0                    # sigmoid sharpness for smooth outage proxy

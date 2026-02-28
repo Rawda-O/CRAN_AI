@@ -1,0 +1,6 @@
+# Visualization settings (Matplotlib + Seaborn)
+visualization:
+  save_dir: "figures"
+  formats: ["png", "pdf"]
+  dpi: 200
+  seaborn_theme: "whitegrid"

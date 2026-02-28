@@ -1,0 +1,11 @@
+# Generalization settings (DNN†): include system parameters as inputs
+generalized:
+  enable: true
+  ranges:
+    tau: [0.10, 0.50]
+    Ps_max: [1.0, 50.0]
+    Pr_max: [1.0, 50.0]
+
+  # Model outputs are normalized fractions gamma in [0,1] and converted to power using Ps_max/Pr_max
+  output:
+    use_gamma: true

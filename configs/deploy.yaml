@@ -1,0 +1,10 @@
+# Deployment / real-time evidence settings
+deploy:
+  export:
+    onnx: true
+    torchscript: true
+  benchmark:
+    enable: true
+    batch_sizes: [1, 8, 32, 128, 512]
+    warmup_iters: 50
+    measure_iters: 200

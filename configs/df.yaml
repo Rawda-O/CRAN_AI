@@ -1,0 +1,13 @@
+# Decode-and-Forward (DF) policy / physics settings
+df:
+  tau: 0.25                    # time-sharing factor (tau in papers)
+  noise_power: 1.0             # normalized noise variance (can be scaled later)
+
+  power:
+    Pp: 10.0                   # primary transmit power (W)
+    Ps_max: 10.0               # secondary max power (W)
+    Pr_max: 10.0               # relay max power (W)
+
+  primary_qos:
+    Rp0: 1.0                   # required primary rate target (R_P^0)
+    # A = 2^(2*Rp0/(1-tau)) - 1  (computed in physics layer)

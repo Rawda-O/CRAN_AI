@@ -1,0 +1,10 @@
+# Compress-and-Forward (CF) policy / physics settings
+cf:
+  tau: 0.25
+  noise_power: 1.0
+  power:
+    Pp: 10.0
+    Ps_max: 10.0
+    Pr_max: 10.0
+  primary_qos:
+    Rp0: 1.0

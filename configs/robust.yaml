@@ -1,0 +1,12 @@
+# Robust training with imperfect CSI (self-supervised pairing)
+robust:
+  enable: true
+  mode: "pairing"              # pairing = (imperfect input, perfect loss reference)
+
+  # Noise applied ONLY to channel gains (never to system parameters)
+  noise:
+    sigma: 0.15                # std dev of estimation error (normalized)
+    apply_to_links: ["PP","PR","RP","SP"]  # primary-sensitive links by default
+    clamp_min: 0.0             # keep gains non-negative
+
+  estimator_snr_db_grid: [0, 5, 10, 15, 20, 25, 30]  # for robustness sweeps
